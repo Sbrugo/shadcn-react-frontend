@@ -1,13 +1,14 @@
 import Home from "@/pages/Home";
-import Login from "@/components/Login";
-import Register from "@/components/Register";
 import { Route, Routes } from "react-router-dom";
+import { LoginForm } from "@/components/ui/login-form";
+import { RegisterForm } from "@/components/ui/register-form";
+
 const Layout = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegisterForm />} />
     </Routes>
   );
 };

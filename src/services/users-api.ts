@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const api_url = process.env.API_URL;
+const api_url = import.meta.env.VITE_API_URL;
 
 export type userData = {
   id: "";
@@ -29,6 +29,16 @@ export const findById = async (id: string) => {
     return response;
   } catch (error) {
     console.error(`Could not find user with id ${id}`);
+    throw error;
+  }
+};
+
+export const getUsers = async () => {
+  try {
+    const response = await axios.get(`${api_url}/users/`);
+    return response;
+  } catch (error) {
+    console.error("Could not get users");
     throw error;
   }
 };
